@@ -2,86 +2,158 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Acesse com a senha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Carta Secreta</title>
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background: #0d1b2a;
+      height: 100%;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow-x: hidden;
+    }
+
+    /* Tela de senha */
+    #senhaTela {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #001f3f;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      color: white;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
+      color: #00f;
     }
-    .caixa {
-      background: rgba(0,0,50,0.6);
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-    }
-    input {
+
+    #senhaTela input {
       padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
       border: none;
-      border-radius: 10px;
       margin-top: 10px;
-      font-size: 16px;
-      text-align: center;
+      outline: none;
     }
-    button {
+
+    #senhaTela button {
       padding: 10px 20px;
+      font-size: 18px;
       margin-top: 10px;
       border: none;
-      border-radius: 10px;
-      background: #0077ff;
-      color: white;
-      font-size: 16px;
+      border-radius: 5px;
+      background-color: #00f;
+      color: #fff;
       cursor: pointer;
     }
-    .cora {
-      font-size: 40px;
-      position: absolute;
-      animation: cair 5s linear infinite;
+
+    /* Carta */
+    #carta {
+      display: none;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
     }
-    @keyframes cair {
-      0% { transform: translateY(-10vh); }
-      100% { transform: translateY(110vh); }
+
+    #carta h2 {
+      margin-bottom: 20px;
+    }
+
+    #carta p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+      color: #000080;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: #fff;
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 400px) {
+      #carta {
+        padding: 20px;
+      }
+      #carta p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="caixa">
-    <h2>💙 Digite a senha 💙</h2>
-    <input type="password" id="senha" placeholder="Digite aqui">
-    <br>
-    <button onclick="entrar()">Entrar</button>
-    <p style="margin-top:10px;">💙</p>
-  </div>
 
-  <script>
-    function entrar() {
-      let senha = document.getElementById("senha").value;
-      if(senha === "26/06") {
-        window.location.href = "carta.html";
-      } else {
-        alert("Senha incorreta 💔");
-      }
-    }
+<div id="senhaTela">
+  <h2>Digite a senha 💙</h2>
+  <input type="password" id="senhaInput" placeholder="dd/mm">
+  <button onclick="verificarSenha()">Entrar</button>
+</div>
 
-    // Criar corações caindo
-    function criarCoracao() {
-      let cora = document.createElement("div");
-      cora.classList.add("cora");
-      cora.innerHTML = "💙";
-      cora.style.left = Math.random() * 100 + "vw";
-      cora.style.animationDuration = (3 + Math.random() * 5) + "s";
-      document.body.appendChild(cora);
-      setTimeout(() => { cora.remove(); }, 8000);
+<div id="carta">
+  <h2>💌 Minha Carta 💌</h2>
+  <p>
+    Oii, nenénzinha…<br><br>
+    Se você estiver lendo isso, talvez eu já esteja longe. Talvez num canto qualquer, tentando seguir a vida e fingir que tá tudo bem, mas você me conhece, né? Eu finjo, mas o coração grita. E ele tá gritando agora.<br><br>
+    Já tô sentindo saudade e nem fui ainda. Saudade de você me chamando de bbzinho com aquela voizinha, de você me abraçando como se eu fosse seu travesseiro favorito (e era, né?), das nossas brigas que começavam com “te odeio” e terminavam com “GOSTOSA DO KARALHO” kkkkk. Era briga e riso, raiva e amor, tudo no mesmo pacote. Um caos bom. Nosso caos.<br><br>
+    Talvez amigos, provavelmente um amor, mas definitivamente… uma lembrança eterna que vai morar em cada parte minha.<br><br>
+    Quando ouvir que na vida temos 3 amores não imaginava que seria os meus 2 primeiros, 1° por quem me apaixonei e esqueci de mim, 2° o que me fez amar até meu peito doer e os olhos arderem de tanto chorar, infelizmente você não deu pra ser a 3°, você não vai ficar comigo, mas obg por me ensinar amar até o fim da alma 2x.<br><br>
+    Eu pensei que o último seria pra sempre, que a gente ia dar um jeito no caos, mas a vida não quis assim. Ainda assim, eu carrego tudo o que vivemos — as risadas, as brigas, os silêncios cheios de sentido. E mesmo que você não fique, o que a gente teve não vai se perder no tempo. Fica aqui, dentro de mim, guardado com cuidado, do jeito que só a gente sabe.<br><br>
+    Eu vou lembrar de cada detalhe, de cada toque, de cada promessa não dita. E se a dor apertar, vai ser essa lembrança que vai me segurar. Obrigado por me ensinar que amar assim, até o fim, mesmo duas vezes, é o que dá sentido a tudo. E mesmo que a gente siga caminhos diferentes, eu vou querer o seu bem — de verdade, com o coração aberto. Porque amar, de verdade, é isso: querer o melhor, mesmo quando não é junto.<br><br>
+    Então fica bem, fica em paz, e se cuida, porque você vai sempre ser parte do meu melhor e do meu pior. E se algum dia a gente se reencontrar, eu quero olhar pra você e dizer, sem medo: valeu a pena.<br><br>
+    Obrigado por me fazer querer viver de novo, só não sei se quero viver agora sem você... Por ter sido meu lar e meu incêndio. Você plantou fogo no meu coração e paz na minha cabeça e é isso que eu espero ter te dado também.<br><br>
+    Essa carta não é um adeus. É um “se cuida, eu te amo pra sempre”. É um “se a vida quiser, a gente se reencontra”.<br><br>
+    Fica bem, minha gostosa, minha maravilhosa, minha perfeição. Com saudade antes mesmo de partir,<br>
+    Nathan 💘💕
+  </p>
+</div>
+
+<script>
+  const senhaCorreta = "26/06";
+
+  function verificarSenha() {
+    const senha = document.getElementById("senhaInput").value;
+    if(senha === senhaCorreta) {
+      document.getElementById("senhaTela").style.display = "none";
+      document.getElementById("carta").style.display = "block";
+      criarNeve();
+    } else {
+      alert("Senha incorreta!");
     }
-    setInterval(criarCoracao, 500);
-  </script>
+  }
+
+  function criarNeve() {
+    setInterval(() => {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.style.left = Math.random() * window.innerWidth + "px";
+      snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+      snowflake.textContent = "❄";
+      document.body.appendChild(snowflake);
+
+      let top = 0;
+      const fall = setInterval(() => {
+        top += 2;
+        snowflake.style.top = top + "px";
+        if(top > window.innerHeight) {
+          snowflake.remove();
+          clearInterval(fall);
+        }
+      }, 20);
+    }, 200);
+  }
+</script>
+
 </body>
 </html>
