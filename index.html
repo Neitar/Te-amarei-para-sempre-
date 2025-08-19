@@ -2,193 +2,86 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta para você 💌</title>
+  <title>Acesse com a senha</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Dancing Script', cursive;
+      padding: 0;
+      height: 100vh;
+      background: #0d1b2a;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      flex-direction: column;
+      color: white;
+      font-family: Arial, sans-serif;
       overflow: hidden;
     }
-
-    /* Tela de senha */
-    .login {
-      background: rgba(255,255,255,0.9);
+    .caixa {
+      background: rgba(0,0,50,0.6);
       padding: 30px;
-      border-radius: 20px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      z-index: 2;
     }
-
-    .login h2 {
-      color: #0044cc;
-    }
-
-    .login input {
+    input {
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      width: 70%;
-    }
-
-    .login button {
-      padding: 10px 20px;
       border: none;
       border-radius: 10px;
-      background: #0044cc;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
     }
-
-    .login p {
-      color: red;
-      display: none;
-    }
-
-    /* Carta */
-    .carta {
-      background: #fff;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 700px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      font-size: 1.2rem;
-      line-height: 1.6;
-      display: none;
-      z-index: 2;
-    }
-
-    .assinatura {
-      text-align: right;
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.4rem;
-    }
-
-    /* Animação corações */
-    .heart, .snowflake {
-      position: fixed;
-      top: -10px;
-      z-index: 1;
-      user-select: none;
-    }
-
-    .heart {
-      color: #ff3366;
-      font-size: 20px;
-      animation: fall linear infinite;
-    }
-
-    .blueheart {
-      color: #0099ff;
-      font-size: 22px;
-      animation: fall linear infinite;
-    }
-
-    .snowflake {
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #0077ff;
       color: white;
       font-size: 16px;
-      animation: fall linear infinite;
-      opacity: 0.8;
+      cursor: pointer;
     }
-
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
+    .cora {
+      font-size: 40px;
+      position: absolute;
+      animation: cair 5s linear infinite;
+    }
+    @keyframes cair {
+      0% { transform: translateY(-10vh); }
+      100% { transform: translateY(110vh); }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
-<body style="background: linear-gradient(135deg, #0044cc, #0099ff);">
-
-  <!-- Tela de senha -->
-  <div class="login" id="login">
-    <h2>Digite a senha 🔒</h2>
-    <input type="password" id="senha" placeholder="Senha">
+<body>
+  <div class="caixa">
+    <h2>💙 Digite a senha 💙</h2>
+    <input type="password" id="senha" placeholder="Digite aqui">
     <br>
     <button onclick="entrar()">Entrar</button>
-    <p id="erro">Senha incorreta!</p>
-  </div>
-
-  <!-- Carta -->
-  <div class="carta" id="carta">
-    <p>Oii, nenénzinha…</p>
-    <p>Se você estiver lendo isso, talvez eu já esteja longe. Talvez num canto qualquer, tentando seguir a vida e fingir que tá tudo bem, mas você me conhece, né? Eu finjo, mas o coração grita. E ele tá gritando agora.</p>
-    <p>Já tô sentindo saudade e nem fui ainda. Saudade de você me chamando de bbzinho com aquela voizinha, de você me abraçando como se eu fosse seu travesseiro favorito (e era, né?), das nossas brigas que começavam com “te odeio” e terminavam com “GOSTOSA DO KARALHO” kkkkk. Era briga e riso, raiva e amor, tudo no mesmo pacote. Um caos bom. Nosso caos.</p>
-    <p>Talvez amigos, provavelmente um amor, mas definitivamente… uma lembrança eterna que vai morar em cada parte minha.</p>
-    <p>Quando ouvir que na vida temos 3 amores não imaginava que seria os meus 2 primeiros, 1° por quem me apaixonei e esqueci de mim, 2° o que me fez amar até meu peito doer e os olhos arderem de tanto chorar, infelizmente você não deu pra ser a 3°, você não vai ficar comigo, mas obg por me ensinar amar até o fim da alma 2x.</p>
-    <p>Eu pensei que o último seria pra sempre, que a gente ia dar um jeito no caos, mas a vida não quis assim. Ainda assim, eu carrego tudo o que vivemos — as risadas, as brigas, os silêncios cheios de sentido. E mesmo que você não fique, o que a gente teve não vai se perder no tempo. Fica aqui, dentro de mim, guardado com cuidado, do jeito que só a gente sabe. Eu vou lembrar de cada detalhe, de cada toque, de cada promessa não dita. E se a dor apertar, vai ser essa lembrança que vai me segurar. Obrigado por me ensinar que amar assim, até o fim, mesmo duas vezes, é o que dá sentido a tudo. E mesmo que a gente siga caminhos diferentes, eu vou querer o seu bem — de verdade, com o coração aberto. Porque amar, de verdade, é isso: querer o melhor, mesmo quando não é junto. Então fica bem, fica em paz, e se cuida, porque você vai sempre ser parte do meu melhor e do meu pior. E se algum dia a gente se reencontrar, eu quero olhar pra você e dizer, sem medo: valeu a pena.</p>
-    <p>Eu sei que provavelmente você deve estar seguindo sua vida normalmente, mas quero que saiba que eu não me arrependo nem um pouco de todos os dias que a gente viveu, e dos que ainda vamos viver aqui dentro da minha cabeça. Me desculpa por não ser o namorado perfeito, mas pode ter certeza: vou ser o cara que vai chorar de saudade todas as noites, que vai sentir falta do seu abraço, da sua voz, do seu beijo… e até das nossas briguinhas idiotas que sempre acabavam na cama.</p>
-    <p>Se em algum lugar distante no futuro a gente se encontrar de novo, em outras vidas, eu vou sorrir pra você e lembrar dos meses que passamos juntos, das tardes sem pressa, dos beijos longos, dos abraços demorados. E vou pensar: “porra… era ela”.</p>
-    <p>Obrigado por me fazer querer viver de novo, só não sei se quero viver agora sem você... Por ter sido meu lar e meu incêndio. Você plantou fogo no meu coração e paz na minha cabeça e é isso que eu espero ter te dado também.</p>
-    <p>Essa carta não é um adeus. É um “se cuida, eu te amo pra sempre”. É um “se a vida quiser, a gente se reencontra”.</p>
-    <p>E quando esse dia chegar, prometo lembrar da ordem dos seus beijos: Do mais doce… até o mais manhoso.</p>
-    <p>Fica bem, minha gostosa, minha maravilhosa, minha perfeição.</p>
-    <div class="assinatura">
-      Com saudade antes mesmo de partir,<br>
-      Nathan ❤
-    </div>
-    <p><em>P.S.: Se eu chorar lendo isso no futuro, você me deve um beijo. Como estaremos longe, você fala que me ama simplesmente do nada, vou entender.</em></p>
+    <p style="margin-top:10px;">💙</p>
   </div>
 
   <script>
-    // Função login
     function entrar() {
-      const senha = document.getElementById("senha").value;
-      if (senha === "26/06) { // 🔑 Senha definida aqui
-        document.getElementById("login").style.display = "none";
-        document.getElementById("carta").style.display = "block";
-        document.body.style.background = "linear-gradient(135deg, #ff758c, #ff7eb3)";
-        setInterval(criarCoracao, 300);
+      let senha = document.getElementById("senha").value;
+      if(senha === "26/06") {
+        window.location.href = "carta.html";
       } else {
-        document.getElementById("erro").style.display = "block";
+        alert("Senha incorreta 💔");
       }
     }
 
-    // Corações azuis e neve na tela de login
-    function criarAzul() {
-      const heart = document.createElement("div");
-      heart.classList.add("blueheart");
-      heart.innerHTML = "💙";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => { heart.remove(); }, 5000);
-    }
-
-    function criarNeve() {
-      const floco = document.createElement("div");
-      floco.classList.add("snowflake");
-      floco.innerHTML = "❄";
-      floco.style.left = Math.random() * 100 + "vw";
-      floco.style.animationDuration = (Math.random() * 5 + 3) + "s";
-      document.body.appendChild(floco);
-      setTimeout(() => { floco.remove(); }, 6000);
-    }
-
-    setInterval(criarAzul, 400);
-    setInterval(criarNeve, 700);
-
-    // Corações vermelhos na carta
+    // Criar corações caindo
     function criarCoracao() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = "❤";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => { heart.remove(); }, 5000);
+      let cora = document.createElement("div");
+      cora.classList.add("cora");
+      cora.innerHTML = "💙";
+      cora.style.left = Math.random() * 100 + "vw";
+      cora.style.animationDuration = (3 + Math.random() * 5) + "s";
+      document.body.appendChild(cora);
+      setTimeout(() => { cora.remove(); }, 8000);
     }
+    setInterval(criarCoracao, 500);
   </script>
 </body>
 </html>
